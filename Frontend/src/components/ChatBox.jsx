@@ -7,6 +7,7 @@ import MessageInput from './skeletons/MessageInput'
 import MessageSkeleton from './skeletons/MessageSkeleton'
 
 import { formatMessageTime } from '../lib/utils'
+import profile from '../assets/profile.png'
 
 
 function ChatBox() {
@@ -49,7 +50,7 @@ function ChatBox() {
                     >
                         <div className='chat-image avatar'>
                             <div className='size-10 rounded-full'>
-                                <img src={message.senderId === authUser._id ? authUser.profilePic || "/avatar.png" : selectedUser.profilePic || "/avatar.png"} alt="profile pic" />
+                                <img src={message.senderId === authUser._id ? authUser.profilePic || profile : selectedUser.profilePic || "/avatar.png"} alt="profile pic" />
                             </div>
                         </div>
 

@@ -3,6 +3,7 @@ import { useAuthStore } from '../store/useAuthStore'
 import { useChatStore } from '../store/useChatStore'
 import SidebarSkeleton from './skeletons/SidebarSkeleton'
 import { Users } from 'lucide-react'
+import profile from '../assets/profile.png'
 
 
 
@@ -58,7 +59,7 @@ function Sidebar() {
                             onClick={() => setSelectedUser(user)}
                         >
                             <div className='relative mx-auto lg:mx-0'>
-                                <img src={user.profilePic || '/avatar.png'} alt={user.name}
+                                <img src={user.profilePic || profile} alt={user.name}
                                     className='size-12 rounded-full object-cover'
                                 />
                                 {onlineUsers.includes(user._id) && (

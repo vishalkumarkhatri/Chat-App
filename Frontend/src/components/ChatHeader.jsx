@@ -2,7 +2,7 @@ import React from 'react'
 import { X } from 'lucide-react'
 import { useChatStore } from '../store/useChatStore'
 import { useAuthStore } from '../store/useAuthStore'
-
+import profile from '../assets/profile.png'
 
 
 function ChatHeader() {
@@ -17,7 +17,7 @@ function ChatHeader() {
                     {/* Avatar */}
                     <div className='avatar'>
                         <div className='relative size-10 rounded-full'>
-                            <img src={selectedUser.profilePic || "/avatar.png"} alt={selectedUser.name} />
+                            <img src={selectedUser.profilePic || profile} alt={selectedUser.name} />
                         </div>
                     </div>
 
