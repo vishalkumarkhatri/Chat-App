@@ -50,7 +50,7 @@ function ChatBox() {
                     >
                         <div className='chat-image avatar'>
                             <div className='size-10 rounded-full'>
-                                <img src={message.senderId === authUser._id ? authUser.profilePic || profile : selectedUser.profilePic || "/avatar.png"} alt="profile pic" />
+                                <img src={message.senderId === authUser._id ? authUser.profilePic || profile : selectedUser.profilePic || profile} alt="profile pic" />
                             </div>
                         </div>
 

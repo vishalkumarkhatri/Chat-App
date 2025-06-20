@@ -3,7 +3,6 @@ import { useAuthStore } from '../store/useAuthStore'
 import { MessageSquare, Loader2, User, Lock, Mail, Eye, EyeOff } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import AuthImagePattern from '../components/AuthImagePattern';
 import { toast } from 'react-hot-toast'
 
 
@@ -21,6 +20,7 @@ const SignupPage = () => {
         if (!formData.name.trim()) return toast.error("Name is required");
         if (!formData.email.trim()) return toast.error("Email is required");
         if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
+        if(!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.email)) return toast.error("Provide valid email address");
         if (!formData.password.trim()) return toast.error("Password is required");
         if (formData.password.length < 8) return toast.error("Password must be at least 8 characters long");
         if (!/[A-Z]/.test(formData.password)) return toast.error("Password must contain at least one uppercase letter");
@@ -40,14 +40,14 @@ const SignupPage = () => {
     }
 
     return (
-        <div className='min-h-screen grid lg:grid-cols-2'>
-            {/* left */}
-            <div className='flex flex-col justify-center items-center p-6 sm:p-12'>
+        <div className='min-h-screen grid lg:grid-cols-1'>
+          
+            <div className='flex flex-col justify-center items-center p-6 sm:p-12 border border-base-800'>
                 <div className='w-full max-w-md space-y-8'>
                     {/* logo */}
-                    <div className='flex justify-center'>
+                    {/* <div className='flex justify-center'>
                         <img src="/logo.png" alt="logo" className='h-12' />
-                    </div>
+                    </div> */}
                     <div className="text-center mb-8">
                         <div className="flex flex-col items-center gap-2 group">
                             <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -150,16 +150,6 @@ const SignupPage = () => {
                     </p>
                 </div>
             </div>
-
-            {/* right */}
-            <AuthImagePattern
-                title="Join our community"
-                subtitle="Connect with friends, share moments, and make memories."
-
-            />
-
-
-
 
         </div>
 

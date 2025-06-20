@@ -1,8 +1,6 @@
 import React from 'react'
 import { useAuthStore } from '../store/useAuthStore'
 import { MessageSquare, Loader2, User, Lock, Mail, Eye, EyeOff } from 'lucide-react'
-import AuthImagePattern from '../components/AuthImagePattern';
-import { toast } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 
 function LoginPage() {
@@ -22,14 +20,14 @@ function LoginPage() {
 
 
     return (
-        <div className='min-h-screen grid lg:grid-cols-2'>
-            {/* left */}
+        <div className='min-h-screen grid lg:grid-cols-1'>
+            
             <div className='flex flex-col justify-center items-center p-6 sm:p-12'>
                 <div className='w-full max-w-md space-y-8'>
                     {/* logo */}
-                    <div className='flex justify-center'>
+                    {/* <div className='flex justify-center'>
                         <img src="/logo.png" alt="logo" className='h-12' />
-                    </div>
+                    </div> */}
                     <div className="text-center mb-8">
                         <div className="flex flex-col items-center gap-2 group">
                             <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -115,16 +113,6 @@ function LoginPage() {
                     </p>
                 </div>
             </div>
-
-            {/* right */}
-            <AuthImagePattern
-                title="Welcome to Khatri-Chat-App"
-                subtitle="Sign in to your conversations and catch up with your friends and messages."
-
-            />
-
-
-
 
         </div>
 
