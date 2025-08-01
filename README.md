@@ -60,9 +60,9 @@ cd chat-app
 ```
 3. **Install the dependencies:**
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 ### Usage
 
 Run the project with:
